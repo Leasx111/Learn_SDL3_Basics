@@ -71,8 +71,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Users\leand\vs journey\SDL3_image-3.4.4\include;C:\Users\leand\vs journey\SDL3-3.4.14\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\leand\vs journey\SDL3-3.4.14\lib\x64;C:\Users\leand\vs journey\SDL3_image-3.4.4\lib\x64\optional;C:\Users\leand\vs journey\SDL3_image-3.4.4\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\kunay\vs journey\SDL3_image-3.4.4\include;C:\Users\kunay\vs journey\SDL3-3.4.12\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\kunay\vs journey\SDL3_image-3.4.4\lib\x64\optional;C:\Users\kunay\vs journey\SDL3_image-3.4.4\lib\x64;C:\Users\kunay\vs journey\SDL3-3.4.12\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
