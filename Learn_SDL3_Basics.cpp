@@ -11,15 +11,49 @@ int main(int argc, char* argv[]) {
     SDL_Init(SDL_INIT_VIDEO);
 
     SDL_Window* Window = SDL_CreateWindow("BROTHA", 1152, 648, 0);
+    if (Window == nullptr) {
+        printf("%s", "Error Creating Window");
+        SDL_DestroyWindow(Window);
+        SDL_Quit();
+        return 1;
+    }
+
     SDL_Renderer* Renderer = SDL_CreateRenderer(Window, NULL);
+    if (Renderer == nullptr) {
+        printf("%s", "Error Creating Renderer");
+        SDL_DestroyRenderer(Renderer);
+        SDL_DestroyWindow(Window);
+        SDL_Quit();
+        return 1;
+    }
+
     SDL_Surface* Image = SDL_LoadPNG("C:/Users/leand/Downloads/io e mia moglie.png");
+    if (Image == nullptr) {
+        printf("%s", "Error Loading Image");
+        SDL_DestroySurface(Image);
+        SDL_DestroyRenderer(Renderer);
+        SDL_DestroyWindow(Window);
+        SDL_Quit();
+        return 1;
+    }
+
     SDL_Texture* Texture = SDL_CreateTextureFromSurface(Renderer, Image);
+    if (Texture == nullptr) {
+        printf("%s", "Error Creating Texture");
+        SDL_DestroySurface(Image);
+        SDL_DestroyTexture(Texture);
+        SDL_DestroyRenderer(Renderer);
+        SDL_DestroyWindow(Window);
+        SDL_Quit();
+        return 1;
+    }
 
     SDL_DestroySurface(Image);
 
     SDL_Event Event;
 
     while (1) {
+
         SDL_PollEvent(&Event);
 
         if (Event.type == SDL_EVENT_QUIT) {
