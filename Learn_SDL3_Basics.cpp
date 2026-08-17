@@ -6,13 +6,13 @@
 using namespace std;
 
 
-int main(int, char**) {
+int main(int argc, char* argv[]) {
+
     SDL_Init(SDL_INIT_VIDEO);
 
-    SDL_Window* Window;
-    SDL_Renderer* Renderer;
-    SDL_CreateWindowAndRenderer("Hello Window", 800, 300, 0, &Window, &Renderer);
-    SDL_Surface* Image = SDL_LoadPNG("C:\Users\kunay\Godot_Projects\Tiofus-Ubrisa\assets\1000209419.png");
+    SDL_Window* Window = SDL_CreateWindow("BROTHA", 1152, 648, 0);
+    SDL_Renderer* Renderer = SDL_CreateRenderer(Window, NULL);
+    SDL_Surface* Image = SDL_LoadPNG("C:/Users/leand/Downloads/io e mia moglie.png");
     SDL_Texture* Texture = SDL_CreateTextureFromSurface(Renderer, Image);
 
     SDL_DestroySurface(Image);
@@ -26,7 +26,6 @@ int main(int, char**) {
             break;
         }
         
-        SDL_SetRenderDrawColor(Renderer, 0x00, 0x00, 0x00, 0x00);
         SDL_RenderClear(Renderer);
         SDL_RenderTexture(Renderer, Texture, NULL, NULL);
         SDL_RenderPresent(Renderer);
