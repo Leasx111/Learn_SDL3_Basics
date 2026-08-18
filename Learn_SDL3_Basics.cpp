@@ -26,8 +26,8 @@ int main(int argc, char* argv[]) {
         SDL_Quit();
         return 1;
     }
-
-    SDL_Surface* Image = SDL_LoadPNG("C:/Users/leand/Downloads/io e mia moglie.png");
+    
+    SDL_Surface* Image = SDL_LoadPNG("assets/kiba.png");
     if (Image == nullptr) {
         printf("%s", "Error Loading Image");
         SDL_DestroySurface(Image);
